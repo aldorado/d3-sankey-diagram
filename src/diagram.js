@@ -220,7 +220,7 @@ export default function sankeyDiagram () {
     // ENTER
     const enter = group.enter().append('g')
             .attr('class', 'group')
-            // .on('click', selectGroup);
+            .on('click', selectGroup);
 
     enter.append('rect')
     enter.append('text')
@@ -285,11 +285,11 @@ export default function sankeyDiagram () {
     listeners.call('selectNode', el, d)
   }
 
-  // function selectGroup(d) {
-  //   d3.event.stopPropagation();
-  //   var el = d3.select(this)[0][0];
-  //   dispatch.selectGroup.call(el, d);
-  // }
+  function selectGroup(d) {
+    d3.event.stopPropagation();
+    var el = d3.select(this)[0][0];
+    dispatch.selectGroup.call(el, d);
+  }
 
   exports.margins = function (_x) {
     if (!arguments.length) return margin

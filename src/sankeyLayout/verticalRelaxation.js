@@ -114,7 +114,7 @@ export default function positionNodesVertically () {
 }
 
 function center (node) {
-  return node.y + node.dy / 2
+  return 0
 }
 
 function value (link) {
